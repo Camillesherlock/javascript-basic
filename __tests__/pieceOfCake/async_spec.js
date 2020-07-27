@@ -3,12 +3,10 @@ describe('for asynchronous', () => {
     const logs = [];
     setTimeout(() => {
       logs.push('async callback triggered');
-
       // <--start
       // Please write down the correct value. You should write the final result directly.
-      const expected = undefined;
+      const expected = ['after calling setTimeout', 'async callback triggered'];
       // --end->
-
       expect(logs).toEqual(expected);
       done();
     }, 500);
@@ -19,17 +17,14 @@ describe('for asynchronous', () => {
     function setTimeoutUsingPromise(ms) {
       return new Promise(resolve => setTimeout(() => resolve(), ms));
     }
-
     const logs = [];
     setTimeoutUsingPromise(500)
       .then(() => {
-        logs.push('async callback triggered');
-
+        logs.push('after calling setTineout','async callback triggered');
         // <--start
         // Please write down the correct value. You should write the final result directly.
-        const expected = undefined;
+        const expected = ['after calling setTimeout', 'after calling setTineout', 'async callback triggered'];
         // --end->
-
         expect(logs).toEqual(expected);
         done();
       });
@@ -48,7 +43,7 @@ describe('for asynchronous', () => {
       .then(() => {
         // <--start
         // Please write down the correct value. You should write the final result directly.
-        const expected = undefined;
+        const expected = ['Failed! >_<'];
         // --end->
 
         expect(logs).toEqual(expected);
@@ -68,7 +63,7 @@ describe('for asynchronous', () => {
       .then(() => {
         // <--start
         // Please write down the correct value. You should write the final result directly.
-        const expected = undefined;
+        const expected = ['Caught! >_<'];
         // --end->
 
         expect(logs).toEqual(expected);
@@ -93,7 +88,7 @@ describe('for asynchronous', () => {
       .then(() => {
         // <--start
         // Please write down the correct value. You should write the final result directly.
-        const expected = undefined;
+        const expected = ['Caught! >_<', 'Continued', 'Another continued', 'Error handled: Holy ~'];
         // --end->
         expect(logs).toEqual(expected);
         done();
