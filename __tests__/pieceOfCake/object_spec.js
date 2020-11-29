@@ -4,12 +4,12 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expectedName = 'Bob';
+    const finalName = 'Bob';
     // --end->
 
-    expect(person.name).toEqual(expectedName);
+    expect(person.name).toEqual(finalName);
     // eslint-disable-next-line dot-notation
-    expect(person['name']).toEqual(expectedName);
+    expect(person['name']).toEqual(finalName);
   });
 
   it('should get undefined if property is not defined', () => {
@@ -150,7 +150,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    
+
     const expected = Object.prototype;
     // --end->
     expect(Object.getPrototypeOf(emptyObject)).toBe(expected);
